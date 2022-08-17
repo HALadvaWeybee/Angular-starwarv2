@@ -22,8 +22,8 @@ export class PeoplelistComponent implements OnInit {
 
   async ngOnInit() {
     while (true && this.nextUrl) {
-      let tempUrl = '';
-      tempUrl = `${this.url}/${'?page='}${this.pageCount}`;
+      let tempUrl = `${this.url}/${'?page='}${this.pageCount}`;
+      // tempUrl 
       this.pageCount++;
 
       await this.http
@@ -33,11 +33,11 @@ export class PeoplelistComponent implements OnInit {
           this.nextUrl = data.next;
           data.results.forEach((ele: any) => {
             let imageNum = Number(ele.url.match(/\d+/g).join(''));
-            let dataArr = data.results.filter(
-              (element: any) => element.url.match(/\d+/g).join('') == imageNum
-            );
+            // let dataArr = data.results.filter(
+            //   (element: any) => element.url.match(/\d+/g).join('') == imageNum
+            // );
             this.details.push({
-              data: dataArr,
+              data: ele,
               name: ele.name,
               count: imageNum,
             });

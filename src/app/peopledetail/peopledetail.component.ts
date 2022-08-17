@@ -20,8 +20,8 @@ export class PeopledetailComponent implements OnInit {
 
   constructor(private active: ActivatedRoute, private http: HttpClient) {
     this.id = this.active.snapshot.params['id'];
-    let tempUrl = `${this.url}/${this.id}`;
-    this.http.get(tempUrl).subscribe((data: any) => {
+    // let tempUrl = `${this.url}/${this.id}`;
+    this.http.get(`${this.url}/${this.id}`).subscribe((data: any) => {
       this.dataArr = data;
     });
     let tempUrl2 = `${this.url2}/${this.id}`;

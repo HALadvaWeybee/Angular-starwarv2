@@ -5,8 +5,7 @@ import { PeoplelistComponent } from './peoplelist/peoplelist.component';
 
 const routes: Routes = [
   {path:"", component:PeoplelistComponent},
-  {path:'peoplelist',component:PeoplelistComponent},
-  {path:'peoplelist/:id', component:PeopledetailComponent},
+  {path:':id', component:PeopledetailComponent},
 ];
 
 @NgModule({
